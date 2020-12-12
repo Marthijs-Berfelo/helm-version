@@ -12,8 +12,8 @@ OS_ARCH='amd64'
 
 FILE_NAME=''
 DL_DIR='/tmp'
-BIN_ROOT="$HOME/.cloud-tools/bin"
-BIN_DIR="$BIN_ROOT/$GITHUB_PROJ-bin"
+BIN_ROOT="$HOME/bin"
+BIN_DIR="$HOME/.cloud-tools/$GITHUB_PROJ-bin"
 
 function getUserInput() {
   local message="${1}"
@@ -145,6 +145,7 @@ function updateLink() {
 function useVersion() {
   updateLink 'tiller'
   updateLink 'helm'
+  source $HOME/.zshrc
 }
 
 
