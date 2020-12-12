@@ -12,7 +12,7 @@ OS_ARCH='amd64'
 
 FILE_NAME=''
 DL_DIR='/tmp'
-BIN_ROOT="$HOME/.jx/bin"
+BIN_ROOT="$HOME/.cloud-tools/bin"
 BIN_DIR="$BIN_ROOT/$GITHUB_PROJ-bin"
 
 function getUserInput() {
