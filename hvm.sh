@@ -42,7 +42,7 @@ function getUserInput() {
 
   if [[ $((choice >= 0)) -eq 1 ]] && [[ $((choice < index)) -eq 1 ]]; then
     local res
-    res="${options[$choice]}"
+    res="${options[$choice - 1]}"
 
     eval "${3}"="${res}"
     echo -e "\n$confirmation: $res"
@@ -144,20 +144,8 @@ function updateLink() {
 
 function useVersion() {
   updateLink 'tiller'
-  updateLink 'helm'
-  source $HOME/.zshrc
+  updateLink $GITHUB_PROJ
 }
 
 
 init
-#currentVersion
-#echo "CURR: $CURRENT_VERSION"
-#setVersion
-#
-#if [ ! -f "$BIN_DIR/$VERSION/$GITHUB_PROJ" ]; then
-#  echo "Fetching $GITHUB_PROJ version $VERSION ..."
-#  downloadBinary
-#  extractBinary
-#fi
-#
-#useVersion
